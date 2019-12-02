@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Camarero } from 'src/app/model/camarero';
+import { CamareroService } from 'src/app/services/camarero.service';
 
 @Component({
   selector: 'app-listado-camarero',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoCamareroComponent implements OnInit {
 
-  constructor() { }
+  camareros: Camarero[] = undefined;
+
+  constructor(private camareroService: CamareroService) { }
 
   ngOnInit() {
+
+    this.camareros = [];
+
+    this.camareroService.getAll().subscribe(data =>{
+      
+      for(let d of data){
+
+        this.camareros.push(d);
+
+      }
+      
+    });
   }
 
 }
