@@ -8,11 +8,13 @@ import { Producto } from '../model/producto';
 })
 export class ProductoService {
 
-  URL = 'http://10.250.5.29:8086/api/productos'
+  URL = 'http://10.250.5.31:8086/api/productos'
 
   constructor(private http:HttpClient) { }
 
-  getAll() {} //TODO
+  getAll():Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.URL);
+  } //TODO
 
   altaProducto(producto:Producto):Observable<Producto> {
     return this.http.post<Producto>(this.URL, producto);

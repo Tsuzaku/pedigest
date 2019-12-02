@@ -1,1 +1,27 @@
-<p>listado-producto works!</p>
+<h2>Listado productos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Fecha Alta</th>
+            <th>Descatalogado</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <th>{{producto.codigo}}</th>
+            <th>{{producto.nombre}}</th>
+            <th>{{producto.precio}}</th>
+            <th>{{producto.descripcion}}</th>
+            <th>{{producto.fechaAlta | date:'dd/MM/yyyy'}}</th>
+            <th>{{producto.descatalogado}}</th>
+            <th>{{producto.categoria}}</th>
+        </tr>
+    </tbody>
+
+</table>

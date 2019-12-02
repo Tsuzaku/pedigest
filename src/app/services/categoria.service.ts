@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoriaService {
 
-  URL = 'http://10.250.5.29:8086/api/categorias'
+  URL = 'http://10.250.5.31:8086/api/categorias'
 
   constructor(private http:HttpClient) { }
 
