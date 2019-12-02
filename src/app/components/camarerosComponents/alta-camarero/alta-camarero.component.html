@@ -1,1 +1,7 @@
-<p>alta-camarero works!</p>
+<h2>Añadir camarero</h2>
+<hr>
+
+<input *ngIf='camarero' [(ngModel)]='camarero.nombre' type="text"><br>
+<button (click)='addCamarero()'>Add camarero</button><br>
+<hr>
+

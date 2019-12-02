@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Camarero } from 'src/app/model/camarero';
+import { CamareroService } from 'src/app/services/camarero.service';
 
 @Component({
   selector: 'app-alta-camarero',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltaCamareroComponent implements OnInit {
 
-  constructor() { }
+  camarero:Camarero = undefined;
 
-  ngOnInit() {
+  constructor(private camareroService: CamareroService) { 
+
   }
 
+  ngOnInit() {
+    this.camarero = new Camarero();
+  }
+
+  addCamarero():void{
+
+    this.camarero.codigo = Math.floor(Math.random() * 1000) + 150;
+    this.camareroService.altaCamarero(this.camarero).subscribe();
+
+  }
 }

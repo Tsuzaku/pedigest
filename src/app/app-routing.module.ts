@@ -9,14 +9,14 @@ import { ListadoPedidoComponent } from './components/pedidosComponents/listado-p
 
 
 const routes: Routes = [
-  {path:'', redirectTo: 'Alta Camarero', pathMatch: 'full'},  // redirección a com1 si el usuario no pone nada
-  {path: 'Alta Camarero', component: AltaCamareroComponent},
-  {path: 'Listado Camareros', component: ListadoCamareroComponent},
-  {path: 'Alta Producto', component: AltaProductoComponent},
-  {path: 'Listado Productos', component: ListadoProductoComponent},
-  {path: 'Alta Pedido', component: AltaPedidoComponent},
-  {path: 'Listado Pedidos', component: ListadoPedidoComponent},
-  {path: '**', redirectTo: 'home'}];
+  {path:'', redirectTo: 'Alta_Camarero', pathMatch: 'full'},  // redirección a com1 si el usuario no pone nada
+  {path: 'Alta_Camarero', component: AltaCamareroComponent},
+  {path: 'Listado_Camareros', component: ListadoCamareroComponent},
+  {path: 'Alta_Producto', component: AltaProductoComponent},
+  {path: 'Listado_Productos', component: ListadoProductoComponent},
+  {path: 'Alta_Pedido', component: AltaPedidoComponent},
+  {path: 'Listado_Pedidos', component: ListadoPedidoComponent},
+  {path: '**', redirectTo: 'Alta_Camarero'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
