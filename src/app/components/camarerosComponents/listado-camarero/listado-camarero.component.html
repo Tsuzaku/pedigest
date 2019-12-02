@@ -1,1 +1,12 @@
-<p>listado-camarero works!</p>
+<h2>Listado camareros<h2>
+
+<table>
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+    </tr>
+    <tr *ngFor='let camarero of camareros'>
+      <td>{{camarero.codigo}}</td>
+      <td>{{camarero.nombre}}</td>
+    </tr>
+  </table>
