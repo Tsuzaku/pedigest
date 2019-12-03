@@ -14,12 +14,12 @@ import { Router } from '@angular/router';
 })
 export class ListadoProductoComponent implements OnInit {
 
-  productos:Producto[] = undefined;
+  productos:Producto[] = [];
 
   constructor(private productoService: ProductoService, private router: Router) { }
 
   ngOnInit() {
-    this.productos = [];
+    //this.productos = [];
     this.onLoad();
   }
 

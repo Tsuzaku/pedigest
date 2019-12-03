@@ -21,6 +21,7 @@ import { DetallePedidoComponent }   from './components/pedidosComponents/detalle
 import { CategoriaService } from './services/categoria.service';
 import { CamareroService } from './services/camarero.service';
 import { ProductoService } from  './services/producto.service';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProductoService } from  './services/producto.service';
     AltaProductoComponent,
     ListadoProductoComponent,
     EditProductoComponent,
-    DetallePedidoComponent
+    DetallePedidoComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

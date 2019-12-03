@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+// Models
+import { Pedido } from 'src/app/model/pedido';
+import { Producto } from 'src/app/model/producto';
+
+// Service
+import { Router } from '@angular/router';
+import { PedidoService } from 'src/app/services/pedido.service';
+
 @Component({
   selector: 'app-listado-pedido',
   templateUrl: './listado-pedido.component.html',
@@ -7,9 +15,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoPedidoComponent implements OnInit {
 
-  constructor() { }
+  pedidos:Pedido[] = [];
+
+  constructor(private pedidoService: PedidoService, private router: Router) { }
 
   ngOnInit() {
+    this.pedidoService.getAll().subscribe(datos => {
+      for(let d of datos) {
+        console.log(d);
+        this.pedidos.push(new Pedido(d.id, d.camarero, d.fecha, d.mesa, d.lineasPedido));
+      }
+    });
   }
 
 }

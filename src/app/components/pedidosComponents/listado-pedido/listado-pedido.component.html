@@ -1,1 +1,23 @@
-<p>listado-pedido works!</p>
+<h2>Listado pedidos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Camarero</th>
+            <th>Fecha Pedido</th>
+            <th>Nº Mesa</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pedido of pedidos">
+            <th>{{pedido.id}}</th>
+            <th>{{pedido.camarero.nombre}}</th>
+            <th>{{pedido.fecha | date:'dd/MM/yyyy'}}</th>
+            <th>{{pedido.mesa}}</th>
+            <td><button (click)='navigateToDetalles(pedido.id)'>Edit</button></td>
+        </tr>
+    </tbody>
+
+</table>

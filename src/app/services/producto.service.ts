@@ -25,10 +25,10 @@ export class ProductoService {
     return this.http.post<Producto>(this.URL, producto);
   }
 
-  updateProducto(producto:Producto):Observable<Producto> {
+  /*updateProducto(producto:Producto):Observable<Producto> {
     
     return this.http.post<Producto>(this.URL, producto);
-  }
+  }*/
 
 
 }
