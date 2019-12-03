@@ -1,5 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
+// Models
+import { Camarero } from 'src/app/model/camarero';
+import { Pedido } from 'src/app/model/pedido';
+
+// Services
+import { CamareroService } from 'src/app/services/camarero.service';
+import { ProductoService } from 'src/app/services/producto.service';
+import { PedidoService } from 'src/app/services/pedido.service';
+import { LineaPedido } from 'src/app/model/lineaPedido';
+import { Producto } from 'src/app/model/producto';
+
+
+
 @Component({
   selector: 'app-alta-pedido',
   templateUrl: './alta-pedido.component.html',
@@ -7,9 +20,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltaPedidoComponent implements OnInit {
 
-  constructor() { }
+  camareros:Camarero[] = [];
+  productos:Producto[] = [];
+
+  pedido:Pedido = new Pedido();
+
+  myLineaPedido:LineaPedido = new LineaPedido();
+  misLineas:LineaPedido[] = [];
+  
+
+  constructor(private camareroService: CamareroService,
+    private productoService: ProductoService,
+    private pedidoService: PedidoService) { }
 
   ngOnInit() {
+    this.camareroService.getAll().subscribe(datos => {
+      for (let d of datos) {
+        this.camareros.push(new Camarero(d.codigo, d.nombre));
+      }
+      this.pedido.camarero = this.camareros[0];
+    });
+    
+    this.pedido.lineasPedido = [];
+    this.pedido.fecha = new Date();
+
+    this.productoService.getAll().subscribe(datos => {
+      for (let d of datos) {
+        this.productos.push(new Producto(d.codigo, d.nombre, d.precio, d.descripcion, d.fechaAlta, d.descatalogado, d.categoria));
+      }
+    });
+    
+  }
+
+  addLinea() {
+    this.myLineaPedido.precio = this.myLineaPedido.producto.precio;
+    this.misLineas.push(this.myLineaPedido);
+
+    this.myLineaPedido = new LineaPedido();
+  }
+
+  addPedido() {
+    console.log(this.pedido);
+
+    this.pedido.lineasPedido = this.misLineas;
+
+    this.pedidoService.altaPedido(this.pedido).subscribe(datos => {
+      console.log(datos);
+    });
+    
   }
 
 }

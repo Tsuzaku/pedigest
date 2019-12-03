@@ -16,12 +16,14 @@ import { AltaProductoComponent }    from './components/productoComponents/alta-p
 import { ListadoProductoComponent } from './components/productoComponents/listado-producto/listado-producto.component';
 import { EditProductoComponent }    from './components/productoComponents/edit-producto/edit-producto.component';
 import { DetallePedidoComponent }   from './components/pedidosComponents/detalle-pedido/detalle-pedido.component';
+import { AboutUsComponent }         from './components/about-us/about-us.component';
 
 // Services
 import { CategoriaService } from './services/categoria.service';
-import { CamareroService } from './services/camarero.service';
-import { ProductoService } from  './services/producto.service';
-import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CamareroService }  from './services/camarero.service';
+import { ProductoService }  from  './services/producto.service';
+import { PedidoService } from './services/pedido.service';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
   providers: [
     CategoriaService,
     CamareroService,
-    ProductoService
+    ProductoService,
+    PedidoService
   ],
   bootstrap: [AppComponent]
 })

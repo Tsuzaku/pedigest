@@ -21,7 +21,7 @@ export class PedidoService {
     return this.http.get<Pedido[]>(this.URL);
   }
 
-  altaProducto(pedido:Pedido):Observable<Pedido> {
+  altaPedido(pedido:Pedido):Observable<Pedido> {
     return this.http.post<Pedido>(this.URL, pedido);
   }
 

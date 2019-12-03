@@ -21,7 +21,6 @@ export class ListadoPedidoComponent implements OnInit {
   ngOnInit() {
     this.pedidoService.getAll().subscribe(datos => {
       for(let d of datos) {
-        console.log(d);
         this.pedidos.push(new Pedido(d.id, d.camarero, d.fecha, d.mesa, d.lineasPedido));
       }
     });

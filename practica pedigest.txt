@@ -12,11 +12,11 @@ práctica pedigest
 2.- Productos
 
 	1.1.-AltaProductoComponent // V
-	1.2.-ListadoProductoComponent // V (con link para EditProductoComponent) <---
+	1.2.-ListadoProductoComponent // V (con link para EditProductoComponent) // V
 
 3.- Pedidos
 
-	1.1.-AltaPedidoComponent
-	1.2.-ListadoPedidoComponent (con link para DetallePedidoComponent)
+	1.1.-AltaPedidoComponent // X
+	1.2.-ListadoPedidoComponent // V (con link para DetallePedidoComponent) // V
 
 

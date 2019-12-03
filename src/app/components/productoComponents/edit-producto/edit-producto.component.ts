@@ -42,10 +42,9 @@ export class EditProductoComponent implements OnInit {
   editProducto() {
     this.productoService.altaProducto(this.editedProducto).subscribe(datos => {
       console.log(datos);
+      this.router.navigateByUrl('/Listado_Productos');
     });
-    this.router.navigateByUrl('/Listado_Productos');
-
-
+   
   }
 
   formatDate(date) {
