@@ -7,6 +7,7 @@ import { ListadoProductoComponent } from './components/productoComponents/listad
 import { AltaPedidoComponent } from './components/pedidosComponents/alta-pedido/alta-pedido.component';
 import { ListadoPedidoComponent } from './components/pedidosComponents/listado-pedido/listado-pedido.component';
 import { EditProductoComponent } from './components/productoComponents/edit-producto/edit-producto.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'Editar_Producto/:codigo', component: EditProductoComponent},
   {path: 'Alta_Pedido', component: AltaPedidoComponent},
   {path: 'Listado_Pedidos', component: ListadoPedidoComponent},
+  {path: 'About_Us', component: AboutUsComponent},
   {path: '**', redirectTo: 'Alta_Camarero'}];
 
 @NgModule({
