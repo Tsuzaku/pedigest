@@ -28,4 +28,8 @@ export class ListadoPedidoComponent implements OnInit {
     });
   }
 
+  navigateToDetalles(id:number) {
+    this.router.navigateByUrl('/edit/' + id);
+  }
+
 }
