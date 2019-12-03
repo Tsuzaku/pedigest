@@ -9,40 +9,34 @@ mesa:
 <input [(ngModel)]="pedido.mesa" type="number" min="0"><br>
 
 <h3>lineaPedido:</h3>
-
-Producto:
-<select [(ngModel)]="myLineaPedido.producto" name="linea" >
-    <option *ngFor="let producto of productos" [ngValue]="producto" >{{producto.nombre}}</option>
-</select> <br>
-cantidad:
-<input [(ngModel)]="myLineaPedido.cantidad" type="number" min="1"><br>
-<br> 
-<button (click)="addLinea()"> Add </button>
-
 <table>
     <thead>
         <tr>
             <th>Producto</th>
             <th>Cantidad</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let linea of misLineas">
             <th>{{linea.producto.nombre}}</th>
             <th>{{linea.cantidad}}</th>
+            <th><button (click)="removeLinea(linea)"> Remove </button></th>
         </tr>
-
+        <tr>
+            <th>
+                <select [(ngModel)]="myLineaPedido.producto" name="linea" >
+                    <option *ngFor="let producto of productos" [ngValue]="producto" >{{producto.nombre}}</option>
+                </select> <br>
+            </th>
+            <th>
+                <input [(ngModel)]="myLineaPedido.cantidad" type="number" min="1"><br>
+            </th>
+            <th>
+                <button (click)="addLinea()"> Add </button>
+            </th>
+        </tr>
     </tbody>
-
 </table>
-
-
-
-
-
-
-<br>
-
-<hr>
-
+<br><hr>
 <button (click)="addPedido()"> Add pedido </button>

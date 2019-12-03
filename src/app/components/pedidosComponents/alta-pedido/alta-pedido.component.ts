@@ -43,6 +43,7 @@ export class AltaPedidoComponent implements OnInit {
     
     this.pedido.lineasPedido = [];
     this.pedido.fecha = new Date();
+    this.myLineaPedido.cantidad = 1;
 
     this.productoService.getAll().subscribe(datos => {
       for (let d of datos) {
@@ -57,6 +58,12 @@ export class AltaPedidoComponent implements OnInit {
     this.misLineas.push(this.myLineaPedido);
 
     this.myLineaPedido = new LineaPedido();
+    console.log(this.misLineas);
+  }
+
+  removeLinea(linea:LineaPedido){
+    this.misLineas.splice(this.misLineas.indexOf(linea),1);
+    console.log(this.misLineas);
   }
 
   addPedido() {

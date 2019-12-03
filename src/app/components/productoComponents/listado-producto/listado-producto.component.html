@@ -17,7 +17,7 @@
         <tr *ngFor="let producto of productos">
             <th>{{producto.codigo}}</th>
             <th>{{producto.nombre}}</th>
-            <th>{{producto.precio}}</th>
+            <th>{{producto.precio | currency:'EUR':'€':'0.1-2'}}</th>
             <th>{{producto.descripcion}}</th>
             <th>{{producto.fechaAlta | date:'dd/MM/yyyy'}}</th>
             <th>{{producto.descatalogado}}</th>
