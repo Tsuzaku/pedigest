@@ -12,10 +12,10 @@ export class PedidoService {
 
   constructor(private http:HttpClient) { }
 
-  /*getByID(codigo:number):Observable<Pedido> {
+  getByID(id:number):Observable<Pedido> {
 
-    return this.http.get<Pedido>(this.URL + "/" + codigo);
-  }*/
+    return this.http.get<Pedido>(this.URL + "/" + id);
+  }
 
   getAll():Observable<Pedido[]> {
     return this.http.get<Pedido[]>(this.URL);

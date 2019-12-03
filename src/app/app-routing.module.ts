@@ -8,6 +8,7 @@ import { AltaPedidoComponent } from './components/pedidosComponents/alta-pedido/
 import { ListadoPedidoComponent } from './components/pedidosComponents/listado-pedido/listado-pedido.component';
 import { EditProductoComponent } from './components/productoComponents/edit-producto/edit-producto.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { DetallePedidoComponent } from './components/pedidosComponents/detalle-pedido/detalle-pedido.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'Editar_Producto/:codigo', component: EditProductoComponent},
   {path: 'Alta_Pedido', component: AltaPedidoComponent},
   {path: 'Listado_Pedidos', component: ListadoPedidoComponent},
+  {path: 'Detalle_Pedido/:id', component: DetallePedidoComponent},
   {path: 'About_Us', component: AboutUsComponent},
   {path: '**', redirectTo: 'Alta_Camarero'}];
 

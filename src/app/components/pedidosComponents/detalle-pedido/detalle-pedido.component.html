@@ -1,7 +1,28 @@
-<h1>Pedido 1:</h1>
-<p>Fecha:</p>
-<p>Mesa:</p>
+<div *ngIf="pedido">
+    <h1>Pedido {{pedido.id}}:</h1>
+    <p>Fecha: {{pedido.fecha | date:'dd-MM-yyyy'}}</p>
+    <p>Mesa: {{pedido.mesa}}</p>
+        
+    <h3>Info del Camarero: </h3>
+    <p>Codigo: {{pedido.camarero.codigo}}</p>
+    <p>Nombre: {{pedido.camarero.nombre}}</p>
 
-<h3>Info del Camarero: </h3>
-<p>Codigo:</p>
-<p>Nombre:</p>
+    <h3>Lineas de Pedidos</h3>
+    <hr>
+    <div *ngFor="let l of pedido.lineasPedido">
+        <p>cantidad: {{l.cantidad}}</p>
+        <p>precio: {{l.precio}}</p>
+        <p>precio total: {{l.precio * l.cantidad}}</p>
+        <h4>Producto {{l.producto.codigo}}</h4>
+        <p>nombre: {{l.producto.nombre}}</p>
+        <p>precio: {{l.producto.precio}}</p>
+        <p>descripción: {{l.producto.descripcion}}</p>
+        <p>fecha alta: {{l.producto.fechaAlta | date:'dd-MM-yyyy' }}</p>
+        <p>descatalogado: {{l.producto.descatalogado}}</p>
+        <p>categoría: {{l.producto.categoria}}</p>
+        <hr>
+    </div>
+
+</div>
+
+<button (click)="volver()">Volver</button>

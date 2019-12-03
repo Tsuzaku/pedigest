@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 // Models
 import { Pedido } from 'src/app/model/pedido';
-import { Producto } from 'src/app/model/producto';
 
 // Service
 import { Router } from '@angular/router';
@@ -29,7 +28,7 @@ export class ListadoPedidoComponent implements OnInit {
   }
 
   navigateToDetalles(id:number) {
-    this.router.navigateByUrl('/edit/' + id);
+    this.router.navigateByUrl('/Detalle_Pedido/' + id);
   }
 
 }
