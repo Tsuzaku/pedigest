@@ -1,1 +1,13 @@
-<p>edit-producto works!</p>
+<h2>Editar Producto {{editedProducto.codigo}}</h2>
+
+nombre: <input [(ngModel)]="editedProducto.nombre" name="nombre" type="text"><br>
+precio: <input [(ngModel)]="editedProducto.precio" name="precio" type="number"  min="0"><br>
+descripcion: <input [(ngModel)]="editedProducto.descripcion" name="desc" type="text"><br>
+fecha alta: <input [(ngModel)]="editedProducto.fechaAlta" name="fecha" type="date"><br>
+descatalogado: <input [(ngModel)]="editedProducto.descatalogado" name="descatalogado" type="checkbox"><br>
+categoria: <select [(ngModel)]="editedProducto.categoria" name="categorias" >
+  <option *ngFor="let cat of categorias">{{cat}}</option>
+</select>
+<br><br>
+
+<button (click)="editProducto()"> Edit producto </button>

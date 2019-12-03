@@ -30,7 +30,6 @@ export class AltaProductoComponent implements OnInit {
   addProducto(){
     
     this.producto.codigo = Math.floor(Math.random() * 50000) + 50;
-    console.log(this.producto);
     this.productoService.altaProducto(this.producto).subscribe(datos => {
       console.log(datos);
     });

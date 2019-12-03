@@ -10,6 +10,7 @@
             <th>Fecha Alta</th>
             <th>Descatalogado</th>
             <th>Categoria</th>
+            <th>Editar</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
             <th>{{producto.fechaAlta | date:'dd/MM/yyyy'}}</th>
             <th>{{producto.descatalogado}}</th>
             <th>{{producto.categoria}}</th>
+            <td><button (click)='navigateToEdit(producto.codigo)'>Edit</button></td>
         </tr>
     </tbody>
 

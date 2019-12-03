@@ -1,0 +1,3 @@
+para levantar el servidor escribimos...
+
+java -jar pedigest.jar

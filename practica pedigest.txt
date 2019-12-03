@@ -1,0 +1,22 @@
+práctica pedigest
+=================
+
+
+0.- AboutUsComponent
+
+1.- Camareros
+
+	1.1.-AltaCamareroComponent // V
+	1.2.-ListadoCamareroComponent // V
+
+2.- Productos
+
+	1.1.-AltaProductoComponent // V
+	1.2.-ListadoProductoComponent // V (con link para EditProductoComponent) <---
+
+3.- Pedidos
+
+	1.1.-AltaPedidoComponent
+	1.2.-ListadoPedidoComponent (con link para DetallePedidoComponent)
+
+

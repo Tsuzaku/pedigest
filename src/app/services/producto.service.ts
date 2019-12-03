@@ -12,11 +12,21 @@ export class ProductoService {
 
   constructor(private http:HttpClient) { }
 
+  getByID(codigo:number):Observable<Producto> {
+
+    return this.http.get<Producto>(this.URL + "/" + codigo);
+  }
+
   getAll():Observable<Producto[]> {
     return this.http.get<Producto[]>(this.URL);
-  } //TODO
+  }
 
   altaProducto(producto:Producto):Observable<Producto> {
+    return this.http.post<Producto>(this.URL, producto);
+  }
+
+  updateProducto(producto:Producto):Observable<Producto> {
+    
     return this.http.post<Producto>(this.URL, producto);
   }
 
