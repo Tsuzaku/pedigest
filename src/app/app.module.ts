@@ -5,6 +5,7 @@ import { BrowserModule }        from '@angular/platform-browser';
 import { FormsModule }          from '@angular/forms'; 
 import { HttpClientModule }     from '@angular/common/http'
 import { AppRoutingModule }     from './app-routing.module';
+import { PrimengModule }        from './primeng.module';
 
 // Components
 import { AppComponent }             from './app.component';
@@ -27,6 +28,7 @@ import { EuroPipe } from './pipes/euro.pipe';
 import { MyBoolPipe } from './pipes/my-bool.pipe';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { MyBoolPipe } from './pipes/my-bool.pipe';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PrimengModule
   ],
   providers: [
     CategoriaService,
