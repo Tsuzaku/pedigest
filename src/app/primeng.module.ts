@@ -9,6 +9,8 @@ import { InputTextModule }          from 'primeng/inputtext';
 import { CheckboxModule }           from 'primeng/checkbox';
 import { SpinnerModule }            from 'primeng/spinner';
 import { TableModule }              from 'primeng/table';
+import { MenuModule }               from 'primeng/menu';
+import { MenubarModule }            from 'primeng/menubar';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { TableModule }              from 'primeng/table';
     InputTextModule,
     CheckboxModule,
     SpinnerModule,
-    TableModule
+    TableModule,
+    MenuModule,
+    MenubarModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -32,7 +36,9 @@ import { TableModule }              from 'primeng/table';
     InputTextModule,
     CheckboxModule,
     SpinnerModule,
-    TableModule
+    TableModule,
+    MenuModule,
+    MenubarModule
   ]
 })
 export class PrimengModule { }
