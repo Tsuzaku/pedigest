@@ -23,6 +23,8 @@ import { CategoriaService } from './services/categoria.service';
 import { CamareroService }  from './services/camarero.service';
 import { ProductoService }  from  './services/producto.service';
 import { PedidoService } from './services/pedido.service';
+import { EuroPipe } from './pipes/euro.pipe';
+import { MyBoolPipe } from './pipes/my-bool.pipe';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { PedidoService } from './services/pedido.service';
     ListadoProductoComponent,
     EditProductoComponent,
     DetallePedidoComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EuroPipe,
+    MyBoolPipe
   ],
   imports: [
     BrowserModule,

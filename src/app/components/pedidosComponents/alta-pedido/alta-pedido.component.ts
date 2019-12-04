@@ -49,25 +49,26 @@ export class AltaPedidoComponent implements OnInit {
       for (let d of datos) {
         this.productos.push(new Producto(d.codigo, d.nombre, d.precio, d.descripcion, d.fechaAlta, d.descatalogado, d.categoria));
       }
+      this.myLineaPedido.producto = this.productos[0];
     });
     
   }
 
   addLinea() {
+
     this.myLineaPedido.precio = this.myLineaPedido.producto.precio;
     this.misLineas.push(this.myLineaPedido);
 
     this.myLineaPedido = new LineaPedido();
-    console.log(this.misLineas);
+    this.myLineaPedido.cantidad = 1;
+    this.myLineaPedido.producto = this.productos[0];
   }
 
   removeLinea(linea:LineaPedido){
     this.misLineas.splice(this.misLineas.indexOf(linea),1);
-    console.log(this.misLineas);
   }
 
   addPedido() {
-    console.log(this.pedido);
 
     this.pedido.lineasPedido = this.misLineas;
 

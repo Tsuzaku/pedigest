@@ -20,9 +20,7 @@ export class ListadoCamareroComponent implements OnInit {
     this.camareroService.getAll().subscribe(data =>{
       
       for(let d of data){
-
         this.camareros.push(d);
-
       }
       
     });

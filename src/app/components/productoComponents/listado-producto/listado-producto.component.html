@@ -17,10 +17,10 @@
         <tr *ngFor="let producto of productos">
             <th>{{producto.codigo}}</th>
             <th>{{producto.nombre}}</th>
-            <th>{{producto.precio | currency:'EUR':'€':'0.1-2'}}</th>
+            <th>{{producto.precio | euro}}</th>
             <th>{{producto.descripcion}}</th>
             <th>{{producto.fechaAlta | date:'dd/MM/yyyy'}}</th>
-            <th>{{producto.descatalogado}}</th>
+            <th class="red">{{producto.descatalogado | myBool}}</th>
             <th>{{producto.categoria}}</th>
             <td><button (click)='navigateToEdit(producto.codigo)'>Edit</button></td>
         </tr>

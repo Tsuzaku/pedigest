@@ -9,20 +9,19 @@ import { CamareroService } from 'src/app/services/camarero.service';
 })
 export class AltaCamareroComponent implements OnInit {
 
-  camarero:Camarero = undefined;
+  camarero:Camarero = new Camarero();
 
-  constructor(private camareroService: CamareroService) { 
-
-  }
+  constructor(private camareroService: CamareroService) { }
 
   ngOnInit() {
-    this.camarero = new Camarero();
   }
 
   addCamarero():void{
 
     this.camarero.codigo = Math.floor(Math.random() * 1000) + 150;
     this.camareroService.altaCamarero(this.camarero).subscribe();
+
+    this.camarero = new Camarero();
 
   }
 }

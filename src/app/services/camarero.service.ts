@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Camarero } from '../model/camarero';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CamareroService {
 
-  URL = 'http://10.250.5.31:8086/api/camareros'
+  URL = environment.apiURL + '/camareros'
 
   constructor(private http:HttpClient) { }
 
