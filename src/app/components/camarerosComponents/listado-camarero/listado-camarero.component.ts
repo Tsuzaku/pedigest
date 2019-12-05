@@ -10,10 +10,16 @@ import { CamareroService } from 'src/app/services/camarero.service';
 export class ListadoCamareroComponent implements OnInit {
 
   camareros: Camarero[] = undefined;
+  cols: any[]= undefined;
 
   constructor(private camareroService: CamareroService) { }
 
   ngOnInit() {
+
+    this.cols = [
+      { field:'codigo', header:'Código' }, 
+      { field:'nombre', header:'Nombre' }
+    ]
 
     this.camareros = [];
 

@@ -1,6 +1,12 @@
 <h2>Añadir camarero</h2>
-<hr>
+<!--<input *ngIf='camarero' [(ngModel)]='camarero.nombre' type="text"><br>
+<button (click)='addCamarero()'>Add camarero</button><br>-->
 
-<input *ngIf='camarero' [(ngModel)]='camarero.nombre' type="text"><br>
-<button (click)='addCamarero()'>Add camarero</button><br>
-<hr>
+<span class="ui-float-label">
+    <input id="float-input" type="text" *ngIf='camarero' [(ngModel)]='camarero.nombre' size="30" pInputText> 
+    <label for="float-input">Nombre camarero</label>
+</span>
+<br>
+
+<p-button (click)='addCamarero()' icon="pi pi-upload" label="Add camarero"></p-button>
+<!-- <button (click)='addCamarero()'>Add camarero</button><br> -->

@@ -1,6 +1,6 @@
 <h2>Listado camareros</h2>
 
-<table>
+<!--<table>
   <thead>
     <tr>
       <th>Código</th>
@@ -13,4 +13,21 @@
       <td>{{camarero.nombre}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+<p-table [columns]="cols" [value]="camareros" [scrollable]="true" scrollHeight="70px" [resizableColumns]="true">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
